@@ -8,11 +8,10 @@ cmake --version >nul 2>&1 || (
 
 set project_name=Example
 
-if %1 == "-r" || %1 == "release" || %1 == "--release" (
-    set modeDir=.\buildRelease\
-) else (
-    set modeDir=.\build
-)
+set modeDir=.\build
+if /i "%input%"=="-r" set modeDir=.\buildRelease\
+if /i "%input%"=="-release" set modeDir=.\buildRelease\
+if /i "%input%"=="release" set modeDir=.\buildRelease\
 
 if exist "%modeDir%%project_name%.exe" (
     %modeDir%%project_name%.exe

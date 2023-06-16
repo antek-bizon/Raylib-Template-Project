@@ -4,10 +4,6 @@ project(Example)
 
 cmake_policy(SET CMP0054 NEW)
 
-if (MSVC)
-    add_compile_options(/MT)
-endif()
-
 if(NOT RAYLIB_INCLUDE_DIR)
   set(RAYLIB_INCLUDE_DIR "./src/external/raylib/include")
 endif()
